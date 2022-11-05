@@ -1,24 +1,32 @@
 import './App.css';
-
-import Header from './component/layout/Header';
-import { Routes ,Route} from 'react-router-dom'
-
+import { useEffect } from 'react';
+import Header from './component/layout/Header/Header';
+import Footer from './component/layout/Footer/Footer';
+import { Routes, Route } from 'react-router-dom';
+import WebFonte from 'webfontloader';
 
 function App() {
+  useEffect(() => {
+    WebFonte.load({
+      google: {
+        families: ['Robot', 'Drold Sans', 'Chilanka'],
+      },
+    });
+  }, []);
+
   return (
-  
-     <>
+    <>
       <Header />
 
-      {/* <Route path="/home" element={<ProtectedRoute Component={Home} />} />
-        <Route path="/infopage/:id" element={<ProtectedRoute Component={InfoPage} />} />
-        <Route path="/shortlist" element={<ProtectedRoute Component={ShortList} />} />
-        <Route path="/" element={<Login />} />
-        <Route path="/signup" element={<Signup />} /> */}
+      <Routes>
+        <Route path="/" element={<h1> Home</h1>} />
+        <Route path="/product" element={<h1>Product</h1>} />
+        <Route path="/contact" element={<h1>Contact</h1>} />
+        <Route path="/about" element={<h1>About</h1>} />
+      </Routes>
 
-     </>
-     
-   
+     <Footer/>
+    </>
   );
 }
 

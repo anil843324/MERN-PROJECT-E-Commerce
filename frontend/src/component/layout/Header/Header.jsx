@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
-
-import logo from '../../images/logo.jpg';
-
+import logo from '../../../images/logo.jpg';
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
 import { TbSearch } from 'react-icons/tb';
 import { BsCart3 } from 'react-icons/bs';
-
 import { MdPermContactCalendar } from 'react-icons/md';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(true);
@@ -29,10 +27,22 @@ const Navbar = () => {
         </div>
         <div className=" hidden md:flex">
           <ul className="flex text-white items-center cursor-pointer">
-            <li>Home</li>
-            <li>Product</li>
-            <li>Contact</li>
-            <li>About</li>
+            <Link to={'/'}>
+              <li>Home</li>
+            </Link>
+
+            <Link to={'/product'}>
+              <li>Product</li>
+            </Link>
+
+            <Link to={'/contact'}>
+              <li>Contact</li>
+            </Link>
+
+            <Link to={'/about'}>
+              <li>About</li>
+            </Link>
+
             <li>
               <TbSearch size={25} />
             </li>
@@ -65,10 +75,21 @@ const Navbar = () => {
         {!toggle ? (
           <div className="  md:hidden w-full  bg-black text-white absolute top-[60px] left-0  flex justify-center text-center">
             <ul className=" cursor-pointer ">
-              <li>Home</li>
-              <li>Product</li>
-              <li>Contact</li>
-              <li>About</li>
+              <Link to={'/'}>
+                <li>Home</li>
+              </Link>
+
+              <Link to={'/product'}>
+                <li>Product</li>
+              </Link>
+
+              <Link to={'/contact'}>
+                <li>Contact</li>
+              </Link>
+
+              <Link to={'/about'}>
+                <li>About</li>
+              </Link>
               <li>
                 <TbSearch size={25} />
               </li>
