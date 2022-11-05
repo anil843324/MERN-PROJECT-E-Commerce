@@ -26,7 +26,7 @@ const Navbar = () => {
           </h1>
         </div>
         <div className=" hidden md:flex">
-          <ul className="flex text-white items-center cursor-pointer">
+          <ul className="flex text-white  items-center cursor-pointer">
             <Link to={'/'}>
               <li>Home</li>
             </Link>
@@ -74,7 +74,7 @@ const Navbar = () => {
         {/* mobile menu */}
         {!toggle ? (
           <div className="  md:hidden w-full  bg-black text-white absolute top-[60px] left-0  flex justify-center text-center">
-            <ul className=" cursor-pointer ">
+            <ul className=" flex flex-col items-center  cursor-pointer ">
               <Link to={'/'}>
                 <li>Home</li>
               </Link>
